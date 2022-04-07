@@ -1,0 +1,33 @@
+.myApp{
+  text-align: center;
+}
+.signin{
+  border: 1px solid #999;
+  background-color: transparent;
+  padding: 5px;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  margin: 0 5px;
+  outline: none;
+}
+.signin img{
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+.signout{
+  padding: 10px 20px;
+  background: #751212;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}

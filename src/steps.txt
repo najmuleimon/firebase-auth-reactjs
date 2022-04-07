@@ -1,0 +1,37 @@
+Steps:
+1. Go to firebase console (console.firebase.google.com) and login with google
+2. Create a new project and continue
+3. (then enter to my project console) Click Web icon
+4. Give a web application name and click register
+5. (from the given steps) Install firebase in my project using 'npm install firebase' command
+(or we can follow the given steps from firebase documentation => docs > build > authentication > web > get started)
+6. Now firebase will give some project config code. an object named 'firebaseConfig'
+7. Make a file named 'firebase.init.js' in src folder and export it(export default app) to use it in another file
+8. In App.js file import app in getAuth() =>
+import getAuth from firebase/auth and create const auth = getAuth(app) in App.js
+9. Now we will follow the steps of Authentication using google => firebase documentation => docs > build > authentication > web > google
+10. Again go tp console.firebase.google.com > Authentication > click get started
+11. Here we can see different sign in method options/ sign in provider. 
+12. We have to click on google (anyone) and turn on/enable and give a project name and support email address and click save
+13. Now we can see that our google authentication sign in provider is enabled in our firebase console project settings.
+14. We make a button for login with google and add a click handler with a function in App.js file
+15. Create an instance of the Google provider object in App.js file
+16. To sign in with a pop-up window, call signInWithPopup inside the declared function and pass (auth , provider) inside the function
+
+17. Now to show logged In user in our UI we can declare a state. From the state variable we can find all the information of user in an object
+18. To sign out make a button and set a click handler with a function.
+19. inside the function we call signOut from firebase/auth and pass auth in the function.
+
+
+
+====== Now we can add Github login provider
+1. Go tp console.firebase.google.com > Authentication > Sign-in method > add new Provider > click Github
+2. Enable github login provider
+3. To enable , we have to give client id and client secret.
+4. Go to github.com > settings > applications (here we find where my github applications will use or access permission)
+5. github.com > settings > developer settings > OAuth apps > click register a new application
+6. Here we give Application name, homepage URL (localhost url/ live site link), application description, authorization callback url(we can find this in firebase provider enable page)
+7. Click on Register. Here we find our client id and generate client secret
+8. Now we can find our github sign in provider is enabled.
+9. Then follow the same process like google sign in provider from => 
+firebase docs > build > authentication > web > github
