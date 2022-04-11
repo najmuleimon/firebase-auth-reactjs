@@ -1,8 +1,9 @@
 import './App.css';
 import google from './images/google.png'
 import github from './images/github.png'
+import facebook from './images/facebook.png'
 import app from './firebase.init';
-import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useState } from 'react';
 
 const auth = getAuth(app);
@@ -11,6 +12,7 @@ function App() {
   const [user, setUser] = useState({});
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
 
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, googleProvider)
@@ -29,6 +31,18 @@ function App() {
     .then(result => {
       const user = result.user;
       setUser(user)
+      console.log(user);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
+  const handleFacebookSignIn = () => {
+    signInWithPopup(auth, facebookProvider)
+    .then(result => {
+      const user = result.user;
+      setUser(user);
       console.log(user);
     })
     .catch(error => {
@@ -61,10 +75,14 @@ function App() {
             <img src={github} alt="" />
             Sign In with Github
           </button>
+          <button onClick={handleFacebookSignIn} className="signin">
+            <img src={facebook} alt="" />
+            Sign In with Facebook
+          </button>
         </>
       }
       <h2>Name: {user.displayName}</h2>
-      <h3>Email: {user.email}</h3>
+      <h3>Email: {user.email ? user.email : 'No email found'}</h3>
       {user.photoURL ? < img src={user.photoURL} alt = 'userPhoto' /> : ' '}
     </div>
   );

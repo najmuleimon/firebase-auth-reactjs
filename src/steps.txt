@@ -35,3 +35,19 @@ import getAuth from firebase/auth and create const auth = getAuth(app) in App.js
 8. Now we can find our github sign in provider is enabled.
 9. Then follow the same process like google sign in provider from => 
 firebase docs > build > authentication > web > github
+
+====== Facebook login provider
+1. Go tp console.firebase.google.com > Authentication > Sign-in method > add new Provider > click Facebook
+2. Enable github login provider
+3. To enable , we have to give app id and app secret. To get this
+4. Go to developers.facebook.com > my apps (here we can see all my apps)
+5. Go to developers.facebook.com > my apps > click create app > select business > next > give display name/app name and email address > click create app
+6. when clicking create app we need to enter my facebook password
+7. Now we can see a dashboard. here we have to create a test application and we have to work with this test application
+8. click my app name from top-left corner > click create test app > again click create test app > give facebook password > submit > now created
+9. Now click on Facebook login setup > click web 
+10. Now from the left sidebar > Facebook Login > settings > here we have to provide a valid OAuth redirect url > click save changes
+(Go tp console.firebase.google.com > Authentication > Sign-in method > in facebook provider we get the url)
+11. Now from the left sidebar > settings > basic > here we get our app Id and app secret (we need this 2 information in step 3)
+12. In our firebase console facebook app provider, paste app id and app secret > click save (now we can see our facebook app provider is enabled)
+13. Now to make the login functionality follow the steps from go to firebase docs > build > authentication > web > facebook login
